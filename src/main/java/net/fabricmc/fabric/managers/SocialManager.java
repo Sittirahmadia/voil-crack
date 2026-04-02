@@ -32,7 +32,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 
 public class SocialManager {
-    private static final Path settingsPath = Path.of(System.getenv("LOCALAPPDATA"), "Programs", "Common", "friends.json");
+    private static final Path settingsPath = net.fabricmc.loader.api.FabricLoader.getInstance().getGameDir().resolve("friends.json");
     private static final Gson gson = new Gson();
     private static final Map<PlayerEntity, Set<BotFlags>> bots = new ConcurrentHashMap<PlayerEntity, Set<BotFlags>>();
     private static final Set<PlayerEntity> verifiedPlayers = new HashSet<PlayerEntity>();
