@@ -22,6 +22,7 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.fabricmc.loader.api.FabricLoader;
 
 public class InventoryManagerScreen
 extends Screen {
