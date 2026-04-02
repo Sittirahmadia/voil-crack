@@ -13,6 +13,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import net.fabricmc.loader.api.FabricLoader;
 import java.nio.file.attribute.FileAttribute;
 import net.fabricmc.fabric.gui.setting.BooleanSetting;
 import net.fabricmc.fabric.gui.setting.KeybindSetting;
@@ -31,7 +32,7 @@ public class Config {
     public Config(String name, String description) {
         this.name = name;
         Config.description = description;
-        Path rootDir = Paths.get(System.getenv("LOCALAPPDATA"), "Programs", "Common");
+        Path rootDir = FabricLoader.getInstance().getGameDir().resolve("tulip");
         Path configFolder = rootDir.resolve("Configs");
         try {
             Files.createDirectories(configFolder, new FileAttribute[0]);

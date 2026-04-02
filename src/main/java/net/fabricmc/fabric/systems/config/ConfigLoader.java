@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import net.fabricmc.loader.api.FabricLoader;
 import java.nio.file.attribute.FileAttribute;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ import net.fabricmc.fabric.systems.config.Config;
 
 public class ConfigLoader {
     private static final List<Config> configs = new ArrayList<Config>();
-    private static final Path ROOT_DIR = Paths.get(System.getenv("LOCALAPPDATA"), "Programs", "Common");
+    private static final Path ROOT_DIR = FabricLoader.getInstance().getGameDir().resolve("tulip");
     private static final Path CONFIG_DIR = ROOT_DIR.resolve("Configs");
     public static Config lastAddedConfig;
     private static final String PREFIX = "\u00a7d\u00a7l[Voil] \u00a7r";

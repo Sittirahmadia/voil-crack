@@ -2,13 +2,14 @@ package net.fabricmc.fabric.security;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.fabric.security.Networking;
 import net.fabricmc.fabric.security.UserConstants;
 import net.fabricmc.fabric.security.checks.SecurityManager;
 
 public class LoginHandler {
     SecurityManager sm = new SecurityManager();
-    private static final Path USER_FILE = Paths.get(System.getenv("LOCALAPPDATA"), "Programs", "Common").resolve("user.json");
+    private static final Path USER_FILE = FabricLoader.getInstance().getGameDir().resolve("tulip").resolve("user.json");
     private static LoginHandler instance = new LoginHandler();
     public static int userid;
     public static String SessionID;

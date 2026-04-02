@@ -25,7 +25,7 @@ import net.minecraft.util.Identifier;
 
 public class InventoryManagerScreen
 extends Screen {
-    private static final Path settingsPath = Path.of(System.getenv("LOCALAPPDATA"), "Programs", "Common", "inventory.json");
+    private static final Path settingsPath = FabricLoader.getInstance().getGameDir().resolve("tulip").resolve("inventory.json");
     private static final ItemStack[] hotbar = new ItemStack[9];
     private static final ItemStack[] inventory = new ItemStack[36];
     private final ItemStack[] armor = new ItemStack[4];

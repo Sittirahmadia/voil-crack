@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import net.fabricmc.loader.api.FabricLoader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -35,7 +36,7 @@ extends Component {
     private boolean awaitingKeybind = false;
     private int selectedModeIndex = LoginHandler.selectedModeIndex;
     private int keybind = LoginHandler.keybind;
-    public static final Path configsDirectory = Paths.get(System.getenv("LOCALAPPDATA"), "Programs", "Common");
+    public static final Path configsDirectory = FabricLoader.getInstance().getGameDir().resolve("tulip");
 
     public EditGuiMenu(ClickGUI parent) {
         this.parent = parent;

@@ -13,6 +13,7 @@ import java.nio.file.LinkOption;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import net.fabricmc.loader.api.FabricLoader;
 import java.nio.file.attribute.FileAttribute;
 import java.util.List;
 import net.fabricmc.fabric.command.Command;
@@ -31,7 +32,7 @@ import net.fabricmc.fabric.utils.player.ChatUtils;
 
 public class Config
 extends Command {
-    public static final Path configsDirectory = Paths.get(System.getenv("LOCALAPPDATA"), "Programs", "Common", "Configs");
+    public static final Path configsDirectory = FabricLoader.getInstance().getGameDir().resolve("tulip").resolve("Configs");
     public static final String PREFIX = "\u00a7d\u00a7l[Voil] \u00a7r";
 
     public Config() {
